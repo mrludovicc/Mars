@@ -1,0 +1,51 @@
+.home-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-img {
+  background: url("https://images6.alphacoders.com/127/1275171.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  position: relative;
+  filter: saturate(110%);
+  filter: brightness(98%);
+  /* Add relative positioning to the background image container */
+}
+
+.slogan-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.slogan {
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 700;
+}
+.get-started-button {
+  background-color: rgba(204, 85, 0); /* Button background color */
+  color: #fff; /* Button text color */
+  font-size: 1.5rem;
+  padding: 15px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: rgba(255, 102, 0, 0.608);
+}
