@@ -7,9 +7,11 @@ const NavigationBar = () => {
     <nav className={"nav-bar"}>
       <ul>
         <li>
-          <span className={"mars-logo"}>MARS</span>
+          <Link to="/">
+            <span className={"mars-logo"}>MARS</span>
+          </Link>
         </li>
-        <Link to="/">
+        <Link to="/StageOne">
           <div className={"plan-button"}>PLAN</div>
         </Link>
       </ul>
