@@ -21,7 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Stage Two
 
-![Stage Two](public/image-2.png)
+![Stage Two](https://github.com/mrludovicc/Mars/raw/master/public/image-2.png)
 
 ### Stage Three
 
