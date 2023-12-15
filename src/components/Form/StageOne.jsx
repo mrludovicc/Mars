@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import ReactFlagsSelect from "react-flags-select";
-import "../../scss/stageOne.scss";
+import { useForm } from "./FormContext";
+import "../scss/stageOne.scss";
 
 export default function StageOne() {
+  const navigate = useNavigate();
+  const { formData, updateFormData } = useForm();
+
   const [formErrors, setFormErrors] = useState({
     fullName: "",
     dob: "",
@@ -12,6 +16,7 @@ export default function StageOne() {
     phone: "",
   });
   const [selected, setSelected] = useState("");
+
   const validateForm = () => {
     let isValid = true;
     const errors = {
@@ -60,19 +65,16 @@ export default function StageOne() {
 
     if (isValid) {
       console.log("Form submitted successfully!");
+      updateFormData(formData); // Update form data in the context
+      navigate("/stageTwo");
     }
   };
 
-  const [formData, setFormData] = useState({
-    fullName: "",
-    dob: "",
-    nationality: "",
-    email: "",
-    phone: "",
-  });
-
   const handleChange = (name, value) => {
-    setFormData({ ...formData, [name]: value });
+    if (name === "nationality") {
+      setSelected(value); // Update the selected nationality
+    }
+    updateFormData({ [name]: value });
   };
 
   return (
@@ -114,7 +116,7 @@ export default function StageOne() {
               selected={selected}
               id="nationality"
               name="nationality"
-              onSelect={(code) => setSelected(code)}
+              onSelect={(code) => handleChange("nationality", code)}
               isSearchable={true}
               required
             />

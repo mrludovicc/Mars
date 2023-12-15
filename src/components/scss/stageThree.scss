@@ -1,0 +1,100 @@
+.stage-three {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://images6.alphacoders.com/127/1275171.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+  position: relative;
+  filter: saturate(110%);
+  filter: brightness(98%);
+}
+
+.form-container {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  width: 30%;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #fff;
+  margin: 10px 0;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e65800;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* For popup styles */
+.popup {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.popup button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+  background-color: #e65800;
+}

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import "../../scss/stageTwo.scss";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "./FormContext";
+import "../scss/stageTwo.scss";
 
 export default function StageTwo() {
+  const navigate = useNavigate();
+  const { formData, updateFormData } = useForm();
   const [formErrors, setFormErrors] = useState({
     departureDate: "",
     returnDate: "",
@@ -55,19 +59,15 @@ export default function StageTwo() {
     const isValid = validateForm();
 
     if (isValid) {
-      console.log("Form submitted successfully!");
+      // Update the form data
+      updateFormData(formData);
+      // Redirect to StageThree
+      navigate("/stageThree");
     }
   };
 
-  const [formData, setFormData] = useState({
-    departureDate: "",
-    returnDate: "",
-    accommodationPreference: "",
-    specialRequests: "",
-  });
-
   const handleChange = (name, value) => {
-    setFormData({ ...formData, [name]: value });
+    updateFormData({ ...formData, [name]: value });
   };
 
   return (
@@ -120,7 +120,7 @@ export default function StageTwo() {
               <option value="">Select...</option>
               <option value="spaceHotel">Space Hotel</option>
               <option value="martianBase">Martian Base</option>
-              <option value="martianBase">Martian Bubbles</option>
+              <option value="martianBubbles">Martian Bubbles</option>
             </select>
             <span className="error">{formErrors.accommodationPreference}</span>
 

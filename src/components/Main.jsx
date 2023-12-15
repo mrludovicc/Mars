@@ -3,18 +3,23 @@ import React from "react";
 import HomePage from "./HomePage/HomePage";
 import NavigationBar from "./Navigation/NavigationBar";
 import "./scss/styles.scss";
-import StageOne from "./Form/Stage1/StageOne";
-import StageTwo from "./Form/Stage2/StageTwo";
+import StageOne from "./Form/StageOne";
+import StageTwo from "./Form/StageTwo";
+import { FormProvider } from "./Form/FormContext";
+import StageThree from "./Form/StageThree";
 export default function Main() {
   return (
     <Router>
       <>
-        <NavigationBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/stageOne" element={<StageOne />} />
-          <Route path="/stageTwo" element={<StageTwo />} />
-        </Routes>
+        <FormProvider>
+          <NavigationBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/stageOne" element={<StageOne />} />
+            <Route path="/stageTwo" element={<StageTwo />} />
+            <Route path="/stageThree" element={<StageThree />} />
+          </Routes>
+        </FormProvider>
       </>
     </Router>
   );
