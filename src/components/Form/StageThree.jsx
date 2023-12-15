@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "./FormContext";
 import "../scss/stageThree.scss";
@@ -7,6 +7,44 @@ export default function StageThree() {
   const navigate = useNavigate();
   const { formData, updateFormData, clearFormData } = useForm();
   const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Redirect to StageOne if StageOne is not valid
+    const isValidStageOne = validateStageOne();
+    if (!isValidStageOne) {
+      navigate("/stageOne");
+    }
+
+    // Redirect to StageTwo if StageTwo is not valid
+    const isValidStageTwo = validateStageTwo();
+    if (!isValidStageTwo) {
+      navigate("/stageTwo");
+    }
+  }, [navigate]);
+
+  const validateStageOne = () => {
+    // Add your validation logic for StageOne from local storage
+    const storedFormData = JSON.parse(localStorage.getItem("formData"));
+    return (
+      storedFormData &&
+      storedFormData.fullName &&
+      storedFormData.dob &&
+      storedFormData.nationality &&
+      storedFormData.email &&
+      storedFormData.phone
+    );
+  };
+
+  const validateStageTwo = () => {
+    // Add your validation logic for StageTwo from local storage
+    const storedFormData = JSON.parse(localStorage.getItem("formData"));
+    return (
+      storedFormData &&
+      storedFormData.departureDate &&
+      storedFormData.returnDate &&
+      storedFormData.accommodationPreference
+    );
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +61,7 @@ export default function StageThree() {
   const handleChange = (name, value) => {
     updateFormData({ ...formData, [name]: value });
   };
+
   return (
     <>
       <div className="stage-three">

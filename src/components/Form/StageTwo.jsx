@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "./FormContext";
 import "../scss/stageTwo.scss";
@@ -13,6 +13,27 @@ export default function StageTwo() {
     specialRequests: "",
   });
 
+  useEffect(() => {
+    // Redirect to StageOne if StageOne is not valid
+    const isValidStageOne = validateStageOne();
+    if (!isValidStageOne) {
+      navigate("/stageOne");
+    }
+  }, [navigate]);
+
+  const validateStageOne = () => {
+    // Add your validation logic for StageOne from local storage
+    const storedFormData = JSON.parse(localStorage.getItem("formData"));
+    return (
+      storedFormData &&
+      storedFormData.fullName &&
+      storedFormData.dob &&
+      storedFormData.nationality &&
+      storedFormData.email &&
+      storedFormData.phone
+    );
+  };
+
   const validateForm = () => {
     let isValid = true;
     const errors = {
@@ -22,21 +43,15 @@ export default function StageTwo() {
       specialRequests: "",
     };
 
-    const today = new Date();
-    const departureDate = new Date(formData.departureDate);
-    const returnDate = new Date(formData.returnDate);
-
-    if (departureDate <= today) {
-      errors.departureDate = "Departure date must be in the future";
+    // Check if departureDate is empty
+    if (!formData.departureDate) {
+      errors.departureDate = "Please enter the departure date";
       isValid = false;
     }
 
-    if (
-      returnDate <= departureDate ||
-      returnDate - departureDate < 3 * 24 * 60 * 60 * 1000
-    ) {
-      errors.returnDate =
-        "Return date must be at least 3 days after departure date";
+    // Check if returnDate is empty
+    if (!formData.returnDate) {
+      errors.returnDate = "Please enter the return date";
       isValid = false;
     }
 
@@ -46,9 +61,6 @@ export default function StageTwo() {
         "Please select your accommodation preference";
       isValid = false;
     }
-
-    // Placeholder validation logic for specialRequests
-    // You can customize the validation based on your requirements
 
     setFormErrors(errors);
     return isValid;
