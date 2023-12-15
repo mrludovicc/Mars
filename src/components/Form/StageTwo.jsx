@@ -22,7 +22,6 @@ export default function StageTwo() {
   }, [navigate]);
 
   const validateStageOne = () => {
-    // Add your validation logic for StageOne from local storage
     const storedFormData = JSON.parse(localStorage.getItem("formData"));
     return (
       storedFormData &&
@@ -55,7 +54,6 @@ export default function StageTwo() {
       isValid = false;
     }
 
-    // Placeholder validation logic for accommodationPreference
     if (!formData.accommodationPreference) {
       errors.accommodationPreference =
         "Please select your accommodation preference";
@@ -118,7 +116,6 @@ export default function StageTwo() {
             <label htmlFor="accommodationPreference">
               Accommodation Preference
             </label>
-            {/* Placeholder for accommodationPreference */}
             <select
               className="form-field"
               id="accommodationPreference"
@@ -139,7 +136,6 @@ export default function StageTwo() {
             <label htmlFor="specialRequests">
               Special Requests or Preferences
             </label>
-            {/* Placeholder for specialRequests */}
             <textarea
               className="form-field"
               id="specialRequests"

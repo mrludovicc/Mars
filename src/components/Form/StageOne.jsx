@@ -8,6 +8,7 @@ export default function StageOne() {
   const navigate = useNavigate();
   const { formData, updateFormData } = useForm();
 
+  // State to manage form validation errors and selected nationality
   const [formErrors, setFormErrors] = useState({
     fullName: "",
     dob: "",
@@ -17,6 +18,7 @@ export default function StageOne() {
   });
   const [selected, setSelected] = useState("");
 
+  // Function to validate the form data
   const validateForm = () => {
     let isValid = true;
     const errors = {

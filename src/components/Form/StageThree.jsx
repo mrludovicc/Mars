@@ -23,7 +23,6 @@ export default function StageThree() {
   }, [navigate]);
 
   const validateStageOne = () => {
-    // Add your validation logic for StageOne from local storage
     const storedFormData = JSON.parse(localStorage.getItem("formData"));
     return (
       storedFormData &&
@@ -36,7 +35,6 @@ export default function StageThree() {
   };
 
   const validateStageTwo = () => {
-    // Add your validation logic for StageTwo from local storage
     const storedFormData = JSON.parse(localStorage.getItem("formData"));
     return (
       storedFormData &&
