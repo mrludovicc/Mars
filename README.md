@@ -13,16 +13,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Landing Page
 
-![Landing Page](image.png)
+![Landing Page](public/image.png)
 
 ### Stage One
 
-![Stage One](image-1.png)
+![Stage One](public/image-1.png)
 
 ### Stage Two
 
-![Stage Two](image-2.png)
+![Stage Two](public/image-3.png)
 
 ### Stage Three
 
-![Stage Three](image-3.png)
+![Stage Three](public/image-3.png)
