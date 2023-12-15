@@ -45,7 +45,7 @@ textarea {
 }
 
 button {
-  background-color: #ff6600;
+  background-color: rgba(204, 85, 0);
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -55,7 +55,7 @@ button {
 }
 
 button:hover {
-  background-color: #e65800;
+  background-color: rgba(255, 102, 0, 0.5);
 }
 
 .error {
@@ -86,7 +86,7 @@ button:hover {
 }
 
 .popup button {
-  background-color: #ff6600;
+  background-color: rgba(204, 85, 0);
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -96,5 +96,5 @@ button:hover {
 }
 
 .popup button:hover {
-  background-color: #e65800;
+  background-color: rgba(255, 102, 0, 0.5);
 }
