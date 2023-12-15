@@ -13,16 +13,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Landing Page
 
-![Landing Page](public/image.png)
+![Landing Page](https://github.com/mrludovicc/Mars/raw/master/public/image.png)
 
 ### Stage One
 
-![Stage One](public/image-1.png)
+![Stage One](https://github.com/mrludovicc/Mars/raw/master/public/image-1.png)
 
 ### Stage Two
 
-![Stage Two](public/image-3.png)
+![Stage Two](public/image-2.png)
 
 ### Stage Three
 
-![Stage Three](public/image-3.png)
+![Stage Three](https://github.com/mrludovicc/Mars/raw/master/public/image-3.png)
