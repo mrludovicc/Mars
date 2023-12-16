@@ -2,6 +2,8 @@ import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
+import StageThree from "./components/Form/StageThree";
+import StageTwo from "./components/Form/StageTwo";
 import StageOne from "./components/Form/StageOne";
 import HomePage from "./components/HomePage/HomePage";
 import { FormProvider } from "./components/Form/FormContext";
@@ -111,4 +113,30 @@ test("displays error messages on invalid input", async () => {
       ).toBeInTheDocument();
     });
   });
+});
+
+//Stage Two Tests
+
+test("renders StageTwo component", () => {
+  render(
+    <MemoryRouter initialEntries={["/StageTwo"]}>
+      <FormProvider>
+        <Routes>
+          <Route path="/StageTwo" element={<StageTwo />} />
+        </Routes>
+      </FormProvider>
+    </MemoryRouter>
+  );
+});
+
+test("renders StageThree component", () => {
+  render(
+    <MemoryRouter initialEntries={["/StageThree"]}>
+      <FormProvider>
+        <Routes>
+          <Route path="/StageThree" element={<StageThree />} />
+        </Routes>
+      </FormProvider>
+    </MemoryRouter>
+  );
 });
