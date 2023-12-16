@@ -87,6 +87,7 @@ export default function StageThree() {
               Emergency Contact Information
             </label>
             <input
+              placeholder="Name - Phone number if available"
               className="form-field"
               type="text"
               id="emergencyContact"
@@ -100,6 +101,7 @@ export default function StageThree() {
               Any Medical Conditions (if applicable)
             </label>
             <textarea
+              placeholder="Type here..."
               className="form-field"
               id="medicalConditions"
               name="medicalConditions"

@@ -89,6 +89,7 @@ export default function StageTwo() {
             <h2>Travel Preferences</h2>
             <label htmlFor="departureDate">Departure Date</label>
             <input
+              placeholder="Select date"
               className="form-field"
               type="date"
               id="departureDate"
@@ -103,6 +104,7 @@ export default function StageTwo() {
               Return Date
             </label>
             <input
+              placeholder="Select date"
               className="form-field"
               type="date"
               id="returnDate"
@@ -137,6 +139,7 @@ export default function StageTwo() {
               Special Requests or Preferences
             </label>
             <textarea
+              placeholder="Let us know your requests or preferences..."
               className="form-field"
               id="specialRequests"
               name="specialRequests"
