@@ -10,17 +10,15 @@ import StageThree from "./Form/StageThree";
 export default function Main() {
   return (
     <Router>
-      <>
-        <FormProvider>
-          <NavigationBar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/stageOne" element={<StageOne />} />
-            <Route path="/stageTwo" element={<StageTwo />} />
-            <Route path="/stageThree" element={<StageThree />} />
-          </Routes>
-        </FormProvider>
-      </>
+      <FormProvider>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/stageOne" element={<StageOne />} />
+          <Route path="/stageTwo" element={<StageTwo />} />
+          <Route path="/stageThree" element={<StageThree />} />
+        </Routes>
+      </FormProvider>
     </Router>
   );
 }

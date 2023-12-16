@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-const FormContext = createContext();
+export const FormContext = createContext();
 
 export const FormProvider = ({ children }) => {
   const [formData, setFormDataState] = useState({});

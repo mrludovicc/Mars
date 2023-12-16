@@ -1,10 +1,14 @@
+import React from "react";
 import Main from "./components/Main";
+import { FormProvider } from "./components/Form/FormContext";
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-    </div>
+    <FormProvider>
+      <div className="App">
+        <Main />
+      </div>
+    </FormProvider>
   );
 }
 

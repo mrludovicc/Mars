@@ -39,23 +39,23 @@ h2 {
 label {
   color: #fff;
   margin: 10px 0;
+  display: block; /* Set labels to block to ensure vertical alignment */
+  text-align: center; /* Center text within the label */
 }
 
 .form-field {
   padding: 10px;
   margin-bottom: 20px;
-  width: 100%; /* Make the form fields fill the entire width */
+  width: 90%;
 }
 
 input {
   border-radius: 12px;
-  width: 100%; /* Make the input fields fill the container width */
+  width: 100%;
 }
 
 #dob {
   margin-top: -1.3rem;
-  padding-right: 2.4rem;
-  padding-left: 2.4rem;
 }
 
 button {
@@ -80,7 +80,7 @@ button:hover {
 
 /* For react-flags-select styles */
 .ReactFlagsSelect-module_fullWidthOptions__1XeR6 {
-  display: block; /* Show options vertically */
+  display: block;
 }
 
 .rfs-option-content {
@@ -89,7 +89,7 @@ button:hover {
 }
 
 .rfs-label {
-  color: #fff; /* Set the text color of the selected nationality */
+  color: #fff;
 }
 
 .rfs-selected {
