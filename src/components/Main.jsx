@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import React from "react";
 import HomePage from "./HomePage/HomePage";
 import NavigationBar from "./Navigation/NavigationBar";
@@ -17,6 +22,7 @@ export default function Main() {
           <Route path="/stageOne" element={<StageOne />} />
           <Route path="/stageTwo" element={<StageTwo />} />
           <Route path="/stageThree" element={<StageThree />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </FormProvider>
     </Router>
