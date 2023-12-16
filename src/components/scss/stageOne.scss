@@ -16,8 +16,12 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
+
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+  }
 }
 
 form {
@@ -40,18 +44,18 @@ label {
 .form-field {
   padding: 10px;
   margin-bottom: 20px;
+  width: 100%; /* Make the form fields fill the entire width */
 }
+
+input {
+  border-radius: 12px;
+  width: 100%; /* Make the input fields fill the container width */
+}
+
 #dob {
   margin-top: -1.3rem;
   padding-right: 2.4rem;
   padding-left: 2.4rem;
-}
-input {
-  border-radius: 12px;
-}
-.rfs-label {
-  display: flex;
-  align-items: center;
 }
 
 button {

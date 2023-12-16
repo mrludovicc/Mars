@@ -18,6 +18,9 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   width: 30%;
   margin: 0 auto;
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+  }
 }
 
 form {
