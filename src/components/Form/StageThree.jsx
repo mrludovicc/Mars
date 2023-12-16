@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "./FormContext";
 import "../scss/stageThree.scss";
 
+// ... (import statements)
+
 export default function StageThree() {
   const navigate = useNavigate();
   const { formData, updateFormData, clearFormData } = useForm();
@@ -46,6 +48,18 @@ export default function StageThree() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Additional validation based on health declaration
+    if (formData.healthDeclaration === "yes") {
+      if (
+        formData.medicalConditions === undefined ||
+        formData.medicalConditions.length < 3
+      ) {
+        alert("Medical conditions must be at least 3 characters");
+        return;
+      }
+    }
+
     localStorage.clear();
     setShowPopup(true);
   };
@@ -109,6 +123,7 @@ export default function StageThree() {
               onChange={(e) =>
                 handleChange("medicalConditions", e.target.value)
               }
+              disabled={formData.healthDeclaration === "no"}
             ></textarea>
 
             <button type="submit">Submit</button>

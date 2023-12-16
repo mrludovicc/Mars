@@ -46,11 +46,28 @@ export default function StageTwo() {
     if (!formData.departureDate) {
       errors.departureDate = "Please enter the departure date";
       isValid = false;
+    } else if (new Date(formData.departureDate) <= new Date()) {
+      errors.departureDate = "Departure date must be in the future";
+      isValid = false;
     }
 
     // Check if returnDate is empty
     if (!formData.returnDate) {
       errors.returnDate = "Please enter the return date";
+      isValid = false;
+    } else if (
+      new Date(formData.returnDate) <= new Date(formData.departureDate)
+    ) {
+      errors.returnDate =
+        "Return date must be after 3 days of the departure date";
+      isValid = false;
+    } else if (
+      new Date(formData.returnDate) <
+      new Date(formData.departureDate).setDate(
+        new Date(formData.departureDate).getDate() + 3
+      )
+    ) {
+      errors.returnDate = "Return date must be at least 3 days after departure";
       isValid = false;
     }
 
